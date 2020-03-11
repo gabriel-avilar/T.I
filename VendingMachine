@@ -1,0 +1,42 @@
+import javax.swing.JOptionPane;
+
+public class Maquina {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		double saldo;
+		int i,j=0, qtd, quarter, dime;
+		String exit;
+		
+		
+		do {
+		JOptionPane.showMessageDialog(null, String.format("Alguns avisos!!!! \n- Essa máquina vende apenas coca-cola e não retorna troco!"
+		+ "\n- Para evitar transtorno, insira o valor correto de moedas!"));
+			
+		dime = Integer.parseInt(JOptionPane.showInputDialog("Digite quantas moedas de R$0.10 voce deseja inserir"));
+		
+		
+		quarter = Integer.parseInt(JOptionPane.showInputDialog("Digite quantas moedas de R$0.25 voce deseja inserir"));
+		saldo = (dime * 0.10) + (quarter * 0.25);
+		
+		JOptionPane.showMessageDialog(null, String.format("Seu saldo é de= %.2f", saldo));
+		
+		for (i=0; i<10;i++) {
+		if (saldo >= 0.45 ) {
+		saldo = saldo - 0.45;
+		j++;
+		}}
+		
+		JOptionPane.showMessageDialog(null, "Voce adquiriu " + j + " Coca-Cola(s)");
+		j=0;
+		JOptionPane.showMessageDialog(null, String.format("Seu saldo final é de= %.2f", saldo));
+		exit = JOptionPane.showInputDialog("Deseja comprar mais?");
+		
+		} while(exit.equals("sim"));
+		}
+		
+	}
+
+
